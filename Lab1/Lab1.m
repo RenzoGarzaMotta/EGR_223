@@ -38,7 +38,7 @@ dB0 = SNR(SNR0dB);      %Generates SNR value for a 0dB level
 dBn6 = SNR(SNRn6dB);    %Generates SNR value for a -6dB level
  
 %Noise Signal Generation
-noiseGen = @(SNRatio) (randn(size(t))*sqrt(SNRatio));   %Noise vector of size t generator with a SNR input
+noiseGen = @(SNRatio) (randn(size(t))/sqrt(SNRatio));   %Noise vector of size t generator with a SNR input
 signal1 = noiseGen(dB6);                                %Generates a 6dB noise vector
 signal2 = noiseGen(dB0);                                %Generates a 0dB noise vector
 signal3 = noiseGen(dBn6);                               %Generates a -6dB noise vector
